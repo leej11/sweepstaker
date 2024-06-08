@@ -1,0 +1,102 @@
+{
+  "France": {
+    "group": "D",
+    "seed": 2
+  },
+  "Belgium": {
+    "group": "E",
+    "seed": 3
+  },
+  "England": {
+    "group": "C",
+    "seed": 4
+  },
+  "Portugal": {
+    "group": "F",
+    "seed": 6
+  },
+
+  "Netherlands": {
+    "group": "D",
+    "seed": 7
+  },
+  "Spain": {
+    "group": "B",
+    "seed": 8
+  },
+  "Italy": {
+    "group": "B",
+    "seed": 9
+  },
+  "Croatia": {
+    "group": "B",
+    "seed": 10
+  },
+
+  "Germany": {
+    "group": "A",
+    "seed": 16
+  },
+  "Switzerland": {
+    "group": "A",
+    "seed": 19
+  },
+  "Denmark": {
+    "group": "C",
+    "seed": 21
+  },
+  "Ukraine": {
+    "group": "E",
+    "seed": 22
+  },
+  "Austria": {
+    "group": "D",
+    "seed": 25
+  },
+  "Hungary": {
+    "group": "A",
+    "seed": 26
+  },
+  "Poland": {
+    "group": "D",
+    "seed": 28
+  },
+  "Serbia": {
+    "group": "C",
+    "seed": 33
+  },
+  "Czechia": {
+    "group": "F",
+    "seed": 36
+  },
+
+  "Scotland": {
+    "group": "A",
+    "seed": 39
+  },
+  "Turkey": {
+    "group": "F",
+    "seed": 40
+  },
+  "Romania": {
+    "group": "E",
+    "seed": 46
+  },
+
+  "Slovakia": {
+    "group": "E",
+    "seed": 48
+  },
+  "Slovenia": {
+    "group": "C",
+    "seed": 57
+  },
+  "Albania": {
+    "group": "B",
+    "seed": 66
+  },
+  "Georgia": {
+    "group": "F",
+    "seed": 75
+  }
+}

@@ -1,0 +1,22 @@
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}    
+
+button {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #ffd600;
+    color: #000;
+}
+
+button:hover {
+    background-color: #FFE977;
+}
+
+button:active {
+    color: #e4010b;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+}
