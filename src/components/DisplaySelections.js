@@ -2,13 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { DrawContext } from "../context/drawContext";
 
 function CurrentSelection() {
-  const { selectedCountry, selectedEntrant } = useContext(DrawContext);
+  const { selectedCountry, selectedEntrant, countries, selectedCountries } =
+    useContext(DrawContext);
   const [showEntrant, setShowEntrant] = useState(false);
   const [dots, setDots] = useState("");
   const flagSrc = selectedCountry ? `/flags/${selectedCountry}.png` : null;
 
   useEffect(() => {
     if (selectedCountry) {
+      console.log("Selected Country:", selectedCountry);
+      console.log("Countries:", countries);
+      console.log("Selected Countries:", selectedCountries);
       setShowEntrant(false); // Reset the entrant display state
       setDots(" "); // Reset dots
 
@@ -38,6 +42,7 @@ function CurrentSelection() {
               alt={`Flag of ${selectedCountry}`}
               // style={{ width: "50px", height: "auto", marginRight: "10px" }}
             />
+            <p>World Ranking: {selectedCountries[selectedCountry].seed}</p>
             <h1>
               {selectedCountry} goes to {!showEntrant ? dots : <br />}
             </h1>

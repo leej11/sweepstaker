@@ -24,6 +24,10 @@ function App() {
       <CurrentSelection />
       <RandomButton />
 
+      <div className="groupsContainer">
+        <Groups />
+      </div>
+
       <div className="container">
         <div className="item">
           <Country />
@@ -31,13 +35,9 @@ function App() {
         <div className="item">
           <Entrant />
         </div>
-        <div className="item bg-color-1">
+        {/* <div className="item bg-color-1">
           <SelectedCountries />
-        </div>
-      </div>
-
-      <div className="groupsContainer">
-        <Groups />
+        </div> */}
       </div>
 
       <Footer />

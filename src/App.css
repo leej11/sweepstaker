@@ -45,13 +45,15 @@
   align-items: center;
   /* align-items: center; */
   color: #dbe8f1;
-  margin-top: 20px;
+  margin: 20px 0 0 0;
 }
 
 .currentSelectionFlag  {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .groupContentDetails b {
@@ -59,8 +61,6 @@
 }
 
 .selectedEntrant {
-  color: #dbe8f1;
-  text-shadow: -1px -1px 1px #000, 1px 1px 1px #000;
   margin-top: 0
 }
 
