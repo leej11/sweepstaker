@@ -26,6 +26,7 @@
 }
 
 
+
 .groupContent {
   display: flex;
   flex-direction: row;
@@ -40,13 +41,27 @@
 .currentSelection {
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
-  font-size: 40px;
+  /* align-items: center; */
   color: #dbe8f1;
+  margin-top: 20px;
+}
+
+.currentSelectionFlag  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .groupContentDetails b {
   color: #004ea0
+}
+
+.selectedEntrant {
+  color: #dbe8f1;
+  text-shadow: -1px -1px 1px #000, 1px 1px 1px #000;
+  margin-top: 0
 }
 
 

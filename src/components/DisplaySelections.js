@@ -1,26 +1,49 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DrawContext } from "../context/drawContext";
 
 function CurrentSelection() {
   const { selectedCountry, selectedEntrant } = useContext(DrawContext);
-
+  const [showEntrant, setShowEntrant] = useState(false);
+  const [dots, setDots] = useState("");
   const flagSrc = selectedCountry ? `/flags/${selectedCountry}.png` : null;
+
+  useEffect(() => {
+    if (selectedCountry) {
+      setShowEntrant(false); // Reset the entrant display state
+      setDots(" "); // Reset dots
+
+      const dotInterval = setInterval(() => {
+        setDots((prev) => (prev.length < 4 ? prev + "." : ""));
+      }, 1000); // Update dots every second
+
+      const timer = setTimeout(() => {
+        setShowEntrant(true);
+        clearInterval(dotInterval); // Stop the dot interval when timer is done
+      }, 4000); // Set a 3-second timer
+
+      return () => {
+        clearTimeout(timer); // Clean up the timer on unmount or country change
+        clearInterval(dotInterval); // Clean up the interval on unmount or country change
+      };
+    }
+  }, [selectedCountry]);
 
   return (
     <div className="currentSelection">
       <div className="currentSelectionFlag">
         {selectedCountry && (
-          <img
-            src={flagSrc}
-            alt={`Flag of ${selectedCountry}`}
-            // style={{ width: "50px", height: "auto", marginRight: "10px" }}
-          />
-        )}
-      </div>
-      <div className="currentSelectionText">
-        {selectedCountry && selectedEntrant && (
-          <div>
-            {selectedEntrant} selects {selectedCountry}!
+          <div className="currentSelectionFlag">
+            <img
+              src={flagSrc}
+              alt={`Flag of ${selectedCountry}`}
+              // style={{ width: "50px", height: "auto", marginRight: "10px" }}
+            />
+            <h1>
+              {selectedCountry} goes to {!showEntrant ? dots : <br />}
+            </h1>
+            {showEntrant && (
+              <h1 className="selectedEntrant">🎉 {selectedEntrant} 🎉</h1>
+            )}
           </div>
         )}
       </div>
