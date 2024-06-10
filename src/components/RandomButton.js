@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
-import { getRandomSelections } from "../utils/selectionHelpers";
+import {
+  getRandomSelections,
+  getLowestSeededTeamRandomEntrant,
+} from "../utils/selectionHelpers";
 import { DrawContext } from "../context/drawContext";
 import "../styles/RandomButton.css";
 
@@ -8,10 +11,8 @@ function RandomButton() {
 
   const handleClick = () => {
     // get a selection
-    const { selectedCountry, selectedEntrant } = getRandomSelections(
-      countries,
-      entrants
-    );
+    const { selectedCountry, selectedEntrant } =
+      getLowestSeededTeamRandomEntrant(countries, entrants);
     console.log(selectedEntrant, ": ", selectedCountry);
 
     // dispatch it to drawContext

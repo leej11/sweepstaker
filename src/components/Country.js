@@ -10,7 +10,8 @@ function Country() {
       <ul>
         {Object.entries(countries).map(([country, details]) => (
           <li key={country}>
-            {country} - {details.seed} - Group {details.group}
+            {country}
+            {/* /* - {details.seed} - Group {details.group} */}
           </li>
         ))}
       </ul>

@@ -16,3 +16,23 @@ export const getRandomSelections = (countries, entrants) => {
     selectedEntrant: selectedEntrantKey,
   };
 };
+
+// Helper function to get lowest seeded team, and a random entrant
+export const getLowestSeededTeamRandomEntrant = (countries, entrants) => {
+  let lowestSeededTeam = null;
+  let maxSeed = -Infinity;
+
+  Object.entries(countries).forEach(([country, info]) => {
+    if (info.seed > maxSeed) {
+      maxSeed = info.seed;
+      lowestSeededTeam = country;
+    }
+  });
+
+  const selectedEntrantKey = getRandomKey(entrants);
+
+  return {
+    selectedCountry: lowestSeededTeam,
+    selectedEntrant: selectedEntrantKey,
+  };
+};

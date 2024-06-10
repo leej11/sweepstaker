@@ -1,0 +1,38 @@
+{
+  "A": [
+    "Germany",
+    "Switzerland",
+    "Hungary",
+    "Scotland"
+  ],
+  "B": [
+    "Spain",
+    "Italy",
+    "Croatia",
+    "Albania"
+  ],
+  "C": [
+    "England",
+    "Denmark",
+    "Serbia",
+    "Slovenia"
+  ],
+  "D": [
+    "France",
+    "Netherlands",
+    "Austria",
+    "Poland"
+  ],
+  "E": [
+    "Belgium",
+    "Ukraine",
+    "Romania",
+    "Slovakia"
+  ],
+  "F": [
+    "Portugal",
+    "Czechia",
+    "Turkey",
+    "Georgia"
+  ]
+}

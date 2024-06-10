@@ -9,6 +9,7 @@ button {
     width: 200px;
     border-radius: 10px;
     background-color: #ffd600;
+    box-shadow: 0.1px 0.75px 0.75px 1.5px rgba(0, 0, 0, 0.5);
     color: #000;
 }
 

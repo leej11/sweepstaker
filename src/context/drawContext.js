@@ -1,6 +1,7 @@
 import { createContext, useReducer } from "react";
 import countriesData from "../data/countries.json";
 import entrantsData from "../data/entrants.json";
+import groupsData from "../data/groups.json";
 
 export const DrawContext = createContext();
 
@@ -34,6 +35,7 @@ export const drawReducer = (state, action) => {
       } = moveKeyValue(state.entrants, state.selectedEntrants, selectedEntrant);
 
       return {
+        ...state,
         countries: updatedCountries,
         entrants: updatedEntrants,
         selectedCountry: selectedCountry,
@@ -55,6 +57,7 @@ export const DrawContextProvider = ({ children }) => {
     selectedEntrant: null,
     selectedCountries: [],
     selectedEntrants: [],
+    groupsInfo: groupsData,
     draw: {},
   });
 

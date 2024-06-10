@@ -6,6 +6,7 @@ import "./app.css";
 import {
   CurrentSelection,
   SelectedCountries,
+  Groups,
 } from "./components/DisplaySelections";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -34,6 +35,11 @@ function App() {
           <SelectedCountries />
         </div>
       </div>
+
+      <div className="groupsContainer">
+        <Groups />
+      </div>
+
       <Footer />
     </div>
   );
