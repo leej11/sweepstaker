@@ -56,8 +56,8 @@
   padding: 0;
 }
 
-.groupContentDetails b {
-  color: #004ea0
+.groupContentDetails.bold {
+  font-weight: bold;
 }
 
 .selectedEntrant {

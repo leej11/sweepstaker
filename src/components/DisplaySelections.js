@@ -109,13 +109,12 @@ function Groups() {
                       alt={`Flag of ${country}`}
                     />
                   </div>
-                  <div key={country} className="groupContentDetails">
-                    {country} -
-                    {draw && country === selectedCountry ? (
-                      <b> {reverseLookup(draw, country)}</b>
-                    ) : (
-                      reverseLookup(draw, country)
-                    )}
+                  <div
+                    className={`groupContentDetails ${
+                      country === selectedCountry ? "bold" : ""
+                    }`}
+                  >
+                    {country} - {reverseLookup(draw, country)}
                   </div>
                 </div>
               ))}
