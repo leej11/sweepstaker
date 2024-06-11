@@ -2,7 +2,7 @@
 // import Entrant from "./components/Entrant";
 import RandomButton from "./components/RandomButton";
 // import { useEffect, useState } from "react";
-import "./app.css";
+import "./App.css";
 import {
   CurrentSelection,
   // SelectedCountries,
