@@ -28,7 +28,7 @@ function App() {
         <Groups />
       </div>
 
-      <div className="container">
+      {/* <div className="container">
         <div className="item">
           <Country />
         </div>
@@ -37,8 +37,8 @@ function App() {
         </div>
         {/* <div className="item bg-color-1">
           <SelectedCountries />
-        </div> */}
-      </div>
+        </div> 
+      </div> */}
 
       <Footer />
     </div>

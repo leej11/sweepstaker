@@ -44,6 +44,12 @@ export const drawReducer = (state, action) => {
         selectedEntrants: updatedSelectedEntrants,
         draw: { ...state.draw, [selectedEntrant]: selectedCountry },
       };
+
+    case "SET_REVEAL_DRAW":
+      return {
+        ...state,
+        revealDraw: action.payload,
+      };
     default:
       return state;
   }
@@ -59,6 +65,7 @@ export const DrawContextProvider = ({ children }) => {
     selectedEntrants: [],
     groupsInfo: groupsData,
     draw: {},
+    revealDraw: false,
   });
 
   return (

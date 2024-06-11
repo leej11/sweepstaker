@@ -2,8 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { DrawContext } from "../context/drawContext";
 
 function CurrentSelection() {
-  const { selectedCountry, selectedEntrant, countries, selectedCountries } =
-    useContext(DrawContext);
+  const {
+    selectedCountry,
+    selectedEntrant,
+    countries,
+    selectedCountries,
+    dispatch,
+  } = useContext(DrawContext);
   const [showEntrant, setShowEntrant] = useState(false);
   const [dots, setDots] = useState("");
   const flagSrc = selectedCountry ? `/flags/${selectedCountry}.png` : null;
@@ -16,6 +21,8 @@ function CurrentSelection() {
       setShowEntrant(false); // Reset the entrant display state
       setDots(" "); // Reset dots
 
+      dispatch({ type: "SET_REVEAL_DRAW", payload: false }); // Reset revealDraw state
+
       const dotInterval = setInterval(() => {
         setDots((prev) => (prev.length < 4 ? prev + "." : ""));
       }, 1000); // Update dots every second
@@ -23,14 +30,15 @@ function CurrentSelection() {
       const timer = setTimeout(() => {
         setShowEntrant(true);
         clearInterval(dotInterval); // Stop the dot interval when timer is done
-      }, 4000); // Set a 3-second timer
+        dispatch({ type: "SET_REVEAL_DRAW", payload: true }); // Reveal the draw
+      }, 4000); // Set a 4-second timer
 
       return () => {
         clearTimeout(timer); // Clean up the timer on unmount or country change
         clearInterval(dotInterval); // Clean up the interval on unmount or country change
       };
     }
-  }, [selectedCountry]);
+  }, [selectedCountry, dispatch]);
 
   return (
     <div className="currentSelection">
@@ -89,7 +97,8 @@ const reverseLookup = (obj, value) => {
 };
 
 function Groups() {
-  const { groupsInfo, draw, selectedCountry } = useContext(DrawContext);
+  const { groupsInfo, draw, selectedCountry, revealDraw } =
+    useContext(DrawContext);
 
   const groupKeys = Object.keys(groupsInfo);
   const chunkedGroupKeys = chunkArray(groupKeys, 3); // Chunk into groups of 3
@@ -109,13 +118,19 @@ function Groups() {
                       alt={`Flag of ${country}`}
                     />
                   </div>
-                  <div
-                    className={`groupContentDetails ${
-                      country === selectedCountry ? "bold" : ""
-                    }`}
-                  >
-                    {country} - {reverseLookup(draw, country)}
-                  </div>
+                  {country === selectedCountry ? (
+                    revealDraw ? (
+                      <div className="groupContentDetails bold">
+                        {country} - {reverseLookup(draw, country)}
+                      </div>
+                    ) : (
+                      <div className="groupContentDetails">{country} -</div>
+                    )
+                  ) : (
+                    <div className="groupContentDetails">
+                      {country} - {reverseLookup(draw, country)}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
