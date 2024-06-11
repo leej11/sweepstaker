@@ -1,11 +1,11 @@
-import Country from "./components/Country";
-import Entrant from "./components/Entrant";
+// import Country from "./components/Country";
+// import Entrant from "./components/Entrant";
 import RandomButton from "./components/RandomButton";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import "./app.css";
 import {
   CurrentSelection,
-  SelectedCountries,
+  // SelectedCountries,
   Groups,
 } from "./components/DisplaySelections";
 import Navbar from "./components/Navbar";

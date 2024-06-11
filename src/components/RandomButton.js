@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import {
-  getRandomSelections,
+  // getRandomSelections,
   getLowestSeededTeamRandomEntrant,
 } from "../utils/selectionHelpers";
 import { DrawContext } from "../context/drawContext";
